@@ -63,5 +63,5 @@ jobs:
 
       - name: Conferir que subiu
         run: |
-          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org \
-            "gr-docker exec gr-${{ env.SLUG }}-front wget -qO- http://localhost/"
+          curl --fail --silent --show-error \
+            http://gr.lab.ayty.org:${{ env.PORTA }}/
